@@ -1,6 +1,6 @@
 [package]
 name = "main"
-version = "0.3.3"
+version = "0.3.4"
 edition = "2021"
 
 [[bin]]
@@ -11,7 +11,7 @@ path = "main.rs"
 anyhow = "1.0.69"
 bstr = { version = "1.2.0", default-features = false, features = ["std"] }
 lexopt = "0.3.0"
-resharp = "0.3.3"
+resharp = "0.3.4"
 
 [dependencies.klv]
 path = "../../shared/klv"
