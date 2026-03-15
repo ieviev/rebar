@@ -86,6 +86,7 @@ engines = [
   'python/regex',
   're2',
   'regress',
+  'resharp',
   'rust/regex',
   'rust/regex/lite',
   'rust/regexold',
@@ -111,7 +112,6 @@ engines = [
   'rust/regex/lite',
   'rust/regexold',
 ]
-
 [[bench]]
 model = 'compile'
 name = 'compile-quick'
@@ -130,6 +130,7 @@ engines = [
   'python/regex',
   're2',
   'regress',
+  'resharp',
   'rust/regex',
   'rust/regex/lite',
   'rust/regexold',

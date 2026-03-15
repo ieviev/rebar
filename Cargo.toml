@@ -34,6 +34,7 @@ exclude = [
   "engines/pcre2",
   "engines/re2",
   "engines/regress",
+  "engines/resharp",
   "engines/rust/aho-corasick",
   "engines/rust/memchr",
   "engines/rust/regex",

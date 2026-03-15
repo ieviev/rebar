@@ -54,6 +54,8 @@ count = [
   { engine = 'hyperscan', count = 547_662 },
   # ICU doesn't provide a way to disable Unicode.
   { engine = 'icu', count = 111_825 },
+  # # resharp uses leftmost-longest match semantics
+  { engine = 'resharp', count = 111_824 },
   # I don't know why the count span differs here. Note that this matches
   # v8's count when Unicode mode is enabled as well, which suggests that the
   # number of matches doesn't change. (Which makes sense, because \w, \s and
@@ -95,6 +97,7 @@ engines = [
   'python/regex',
   're2',
   'regress',
+  'resharp',
   'rust/regex',
   'rust/regex/lite',
   'rust/regexold',
@@ -116,6 +119,8 @@ haystack = { path = "rust-src-tools-3b0d4813.txt", line-start = 190_000, line-en
 count = [
   # These engines all count spans of UTF-16 code units.
   { engine = 'dotnet/compiled|icu|java/hotspot|javascript/v8', count = 111_825 },
+  # resharp uses leftmost-longest match semantics
+  { engine = 'resharp', count = 111_848 },
   { engine = '.*', count = 111_841 },
 ]
 engines = [
@@ -129,6 +134,7 @@ engines = [
   'python/re',
   'python/regex',
   'regress',
+  'resharp',
   'rust/regex',
   'rust/regexold',
 ]
@@ -175,6 +181,7 @@ engines = [
   'python/regex',
   're2',
   'regress',
+  'resharp',
   'rust/regex',
   'rust/regex/lite',
   'rust/regexold',
@@ -207,6 +214,7 @@ engines = [
   'python/re',
   'python/regex',
   'regress',
+  'resharp',
   'rust/regex',
   'rust/regexold',
 ]

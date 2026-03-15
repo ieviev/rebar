@@ -72,6 +72,25 @@
     bin = "cargo"
     args = ["clean"]
 
+# The resharp regex engine, written in Rust. A regex engine with all boolean
+# operations and lookarounds, powered by symbolic derivatives and lazy DFA.
+#
+# URL: https://github.com/ieviev/resharp-rs
+[[engine]]
+  name = "resharp"
+  cwd = "../engines/resharp"
+  [engine.version]
+    bin = "./target/release/main"
+    args = ["--version"]
+  [engine.run]
+    bin = "./target/release/main"
+  [[engine.build]]
+    bin = "cargo"
+    args = ["build", "--release"]
+  [[engine.clean]]
+    bin = "cargo"
+    args = ["clean"]
+
 # The RE2 regex engine out of Google, written in C++. Responsible for
 # rekindling interest in using automata for regex engine implementations. Also
 # an ancestor to Rust's regex crate, RE2/J and Go's standard library regexp
