@@ -4,7 +4,7 @@ use {
     anyhow::Context,
     bstr::ByteSlice,
     lexopt::Arg,
-    resharp::Regex,
+    resharp::{Regex, RegexOptions, UnicodeMode},
 };
 
 fn main() -> anyhow::Result<()> {
@@ -119,7 +119,10 @@ fn compile(b: &klv::Benchmark) -> anyhow::Result<Regex> {
     } else {
         pattern
     };
-    let opts = resharp::EngineOptions::default()
-        .unicode(b.regex.unicode);
+    let opts = RegexOptions::default().unicode(if b.regex.unicode {
+        UnicodeMode::Full
+    } else {
+        UnicodeMode::Ascii
+    });
     Ok(Regex::with_options(&pattern, opts)?)
 }
